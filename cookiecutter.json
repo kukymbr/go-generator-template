@@ -1,0 +1,31 @@
+{
+  "__project_name": "yourapp",
+  "__project_title": "{{ cookiecutter.__project_name|replace('-', ' ')|replace('_', ' ')|capitalize }}",
+  "__project_name_env": "{{ cookiecutter.__project_name|replace('-', '_')|upper }}",
+  "__project_name_var": "{{ cookiecutter.__project_name|capitalize|replace('-', '')|replace('_', '') }}",
+
+  "module_name": "{{ cookiecutter.__project_name }}",
+  "project_description": "Golang code generator",
+  "author": "John Doe",
+  "remote": "git@github.com:{{ cookiecutter.author }}/{{ cookiecutter.__project_name }}.git",
+  "go_version": "1.24",
+
+  "with_github_actions": true,
+  "with_gitlab_ci": true,
+
+  "_eol": "\n",
+  "_year": "{% now 'utc', '%Y' %}",
+  "_timestamp": "{% now 'utc', '%Y-%m-%d %H:%M:%S' %}",
+
+  "__prompts__": {
+    "module_name": "Go module name",
+    "project_description": "Project description",
+    "author": "Author",
+    "remote": "Git remote (type '-' to skip)",
+    "go_version": "Go version",
+    "with_github_actions": "Add GitHub Actions workflow",
+    "with_gitlab_ci": "Add gitlab-ci pipeline"
+  },
+
+  "_extensions": ["jinja2_time.TimeExtension"]
+}
