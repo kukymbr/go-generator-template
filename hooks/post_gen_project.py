@@ -33,7 +33,10 @@ def init_git():
     """
     GIT_COMMANDS = [
         ["git", "init"],
+        ["git", "config", "user.email", "{{ cookiecutter.author_email }}"],
+        ["git", "config", "user.name", "{{ cookiecutter.author }}"],
         ["git", "add", "."],
+        ["git", "commit", "-m", "Initial commit: generated with github.com/kukymbr/go-generator-template"],
     ]
 
     if "{{ cookiecutter.remote }}" != "-":

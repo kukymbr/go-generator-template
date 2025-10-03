@@ -17,8 +17,8 @@ all:
 
 prepare:
 	go mod tidy
-	go install ./...
-	go fmt ./...
+	go mod download
+	$(MAKE) fmt
 
 validate:
 	go vet ./...
@@ -28,16 +28,15 @@ validate:
 build:
 	go build $(GO_BUILD_ARGS) -o bin/{{ cookiecutter.__project_name }} ./cmd/{{ cookiecutter.__project_name }}
 
+./bin/golangci-lint:
+	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b "./bin" "v${GOLANGCI_LINT_VERSION}";
+
 lint:
-	if [ ! -f ./bin/golangci-lint ]; then \
-  		curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b "./bin" "v${GOLANGCI_LINT_VERSION}"; \
-  	fi;
+	$(MAKE) ./bin/golangci-lint
 	./bin/golangci-lint run ./...
 
 fmt:
-	if [ ! -f ./bin/golangci-lint ]; then \
-		curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b "./bin" "v${GOLANGCI_LINT_VERSION}"; \
-	fi;
+	$(MAKE) ./bin/golangci-lint
 	./bin/golangci-lint fmt ./...
 
 test:

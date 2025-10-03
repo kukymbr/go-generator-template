@@ -12,11 +12,8 @@ warn() {
   echo "⚠️ WARNING: $@" >&2
 }
 
-debug "Initializing the project and the toolset..."
+debug "Initializing the project..."
 make prepare
-
-debug "Formatting the code..."
-make fmt
 
 debug "Building the app..."
 make build
