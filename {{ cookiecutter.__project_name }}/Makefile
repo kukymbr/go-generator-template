@@ -57,10 +57,4 @@ clean:
 	go clean
 
 generate_example:
-	go build \
-		--ldflags "-X $(VERSION_PACKAGE).BuiltAt=$(shell date -u +%Y%m%d%H%M%S)" \
-		-o bin/{{ cookiecutter.__project_name }}_example \
-		./cmd/{{ cookiecutter.__project_name }}
-	# TODO: add example command arguments.
-	./bin/{{ cookiecutter.__project_name }}
-	rm ./bin/sqlamble_example
+	go run cmd/{{ cookiecutter.__project_name }}/main.go --source=example --target=example --package=example

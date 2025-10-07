@@ -2,7 +2,7 @@ FROM python:3.13.2-alpine
 
 RUN apk add --update --no-cache git make
 RUN git config --global init.defaultBranch main
-RUN pip install --no-cache-dir jinja2_time cookiecutter
+RUN pip install --no-cache-dir cookiecutter
 
 ADD . /cookiecutter/template
 

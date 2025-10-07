@@ -13,7 +13,7 @@ The go {{ cookiecutter.go_version }} is a minimal requirement for the `{{ cookie
 The `go tool` is a preferred way to install:
 
 ```shell
-go get -tool {{ cookiecutter.module_name }}/cmd/sqlamble@latest
+go get -tool {{ cookiecutter.module_name }}/cmd/{{ cookiecutter.__project_name }}
 ```
 
 ## Usage
@@ -36,9 +36,9 @@ Flags:
 1. ...
 2. Add the go file with a `//go:generate` directive:
    ```go
-    package sql  
+    package example  
 
-   //go:generate go tool {{ cookiecutter.__project_name }} --package=mypkg
+   //go:generate go tool {{ cookiecutter.__project_name }} --package=example
    ```
 3. Run the `go generate` command:
    ```shell

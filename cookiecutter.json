@@ -15,8 +15,8 @@
   "with_gitlab_ci": true,
 
   "_eol": "\n",
-  "_year": "{% now 'utc', '%Y' %}",
-  "_timestamp": "{% now 'utc', '%Y-%m-%d %H:%M:%S' %}",
+  "_year": "2025",
+  "_timestamp": "2025-01-01 00:00:00",
 
   "__prompts__": {
     "module_name": "Go module name",
@@ -27,7 +27,5 @@
     "go_version": "Go version",
     "with_github_actions": "Add GitHub Actions workflow",
     "with_gitlab_ci": "Add gitlab-ci pipeline"
-  },
-
-  "_extensions": ["jinja2_time.TimeExtension"]
+  }
 }
