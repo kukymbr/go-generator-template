@@ -1,6 +1,7 @@
-# The Golang code generator app template
+# Golang code generator app template
 
-This is a [🍪 `cookiecutter` ✂️](https://cookiecutter.readthedocs.io) template for a Golang code generator app project.
+This is a ~~generator to generate generators generating the code~~
+[🍪 `cookiecutter` ✂️](https://cookiecutter.readthedocs.io) template for a Golang code generator app project.
 
 ## Creating a new project
 
@@ -36,7 +37,7 @@ To run cookiecutter in non-interactive mode,
 pass `--no-input` argument and template values to override to the EXTRA_ARGS, for example:
 
 ```shell
-./create.sh your_app_fancy_name --no-input with_vt=False
+./create.sh your_app_fancy_name --no-input go_version=1.25
 ```
 
 ### Local installation
@@ -53,7 +54,7 @@ The `__project_name` is a mandatory argument:
 cookiecutter --verbose --output-dir ~/path/to/projects/dir __project_name=testapp .
 
 # Running in non-interactive mode with specified template values:
-cookiecutter --verbose --output-dir ~/path/to/projects/dir --no-input __project_name=testapp with_vt=False . 
+cookiecutter --verbose --output-dir ~/path/to/projects/dir --no-input __project_name=testapp go_version=1.25 . 
 ```
 
 In the case of the local cookiecutter execution, 

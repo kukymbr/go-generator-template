@@ -1,4 +1,4 @@
-# {{ cookiecutter.__project_name }}
+# {{ cookiecutter.__project_title }}
 
 The `{{ cookiecutter.__project_name }}` is a code generator for the [Golang](https://go.dev).
 
