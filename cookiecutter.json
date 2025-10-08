@@ -6,9 +6,12 @@
 
   "module_name": "{{ cookiecutter.__project_name }}",
   "project_description": "Golang code generator",
+
   "author": "John Doe",
-  "author_email": "{{ cookiecutter.author }}@example.com",
-  "remote": "git@github.com:{{ cookiecutter.author }}/{{ cookiecutter.__project_name }}.git",
+  "__author_slug": "{{ cookiecutter.author|lower|replace(' ', '-') }}",
+  "author_email": "{{ cookiecutter.__author_slug }}@example.com",
+
+  "remote": "git@github.com:{{ cookiecutter.__author_slug }}/{{ cookiecutter.__project_name }}.git",
   "go_version": "1.24",
 
   "with_github_actions": true,
